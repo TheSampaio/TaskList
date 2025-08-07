@@ -2,7 +2,7 @@
   <h1>✅ Task List</h1>
 
   <p>
-    A full-stack task management web application with an <strong>ASP.NET Core Minimal API</strong> backend and a <strong>React.js (Next.js)</strong> frontend. It uses <strong>Dapper</strong> for efficient and lightweight SQL-based data access — without relying on a traditional ORM.
+    A full-stack task management web application with an <strong>ASP.NET Core Minimal API</strong> backend and a <strong>Next.js (React.js)</strong> frontend. It uses <strong>Dapper</strong> for efficient and lightweight SQL-based data access — without relying on a traditional ORM.
   </p>
 
   <h2>📚 Table of Contents</h2>
@@ -21,7 +21,7 @@
     <li>Task model includes: ID, title, status, and creation timestamp</li>
     <li><strong>ASP.NET Core Minimal API</strong> backend for fast and clean development</li>
     <li>Data access powered by <strong>Dapper</strong> (no heavy ORM)</li>
-    <li>Responsive and modular <strong>React.js (Next.js)</strong> frontend</li>
+    <li>Responsive and modular <strong>Next.js (React.js)</strong> frontend</li>
     <li><strong>Swagger UI</strong> for easy API testing and exploration</li>
   </ul>
 
