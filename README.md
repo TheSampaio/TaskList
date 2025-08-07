@@ -18,7 +18,7 @@
   <h2 id="features">✨ Features</h2>
   <ul>
     <li>Create, read, update, and delete tasks (<strong>CRUD</strong> operations)</li>
-    <li>Task model includes: ID, title, status, and creation timestamp</li>
+    <li>Task model includes: Id (UUID), Title (string), IsDone (bool), CreationDatetime (datetime)</li>
     <li><strong>ASP.NET Core Minimal API</strong> backend for fast and clean development</li>
     <li>Data access powered by <strong>Dapper</strong> (no heavy ORM)</li>
     <li>Responsive and modular <strong>Next.js (React.js)</strong> frontend</li>
