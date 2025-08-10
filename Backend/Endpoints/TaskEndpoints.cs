@@ -21,7 +21,7 @@ namespace Backend.Endpoints
                     FROM tasks;
                 ";
 
-                var selectResult = await connection.QueryAsync<TasksModel>(selectQuery);
+                var selectResult = await connection.QueryAsync<TaskModel>(selectQuery);
                 return Results.Ok(selectResult);
             });
 
@@ -39,7 +39,7 @@ namespace Backend.Endpoints
                     WHERE id = @Id;
                 ";
 
-                var selectResult = await connection.QueryFirstOrDefaultAsync<TasksModel>(selectQuery, new { Id = id });
+                var selectResult = await connection.QueryFirstOrDefaultAsync<TaskModel>(selectQuery, new { Id = id });
 
                 if (selectResult is null)
                     return Results.NotFound(new
@@ -52,7 +52,7 @@ namespace Backend.Endpoints
             });
 
             // [POST] Create One New Task
-            builder.MapPost("/api/tasks", async (IDbConnection connection, TasksModel? task) =>
+            builder.MapPost("/api/tasks", async (IDbConnection connection, TaskModel? task) =>
             {
                 if (task is null)
                     return Results.BadRequest("The request body is missing or empty.");
@@ -107,7 +107,7 @@ namespace Backend.Endpoints
             #endregion
 
             // [PUT] Update Tasks By ID
-            builder.MapPut("/api/tasks/{id:Guid}", async (IDbConnection connection, Guid id, TasksModel? task) =>
+            builder.MapPut("/api/tasks/{id:Guid}", async (IDbConnection connection, Guid id, TaskModel? task) =>
             {
                 if (task is null)
                     return Results.BadRequest("The request body is missing or invalid.");

@@ -20,5 +20,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Task List API"));
 }
 
-app.MapTaskEndpoints();
+// Maps all app's endpoints
+app.MapLoginEndpoints()
+    .MapTaskEndpoints();
+
 app.Run();

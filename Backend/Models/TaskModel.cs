@@ -6,7 +6,7 @@
     //     is_done              BIT                                NOT NULL,
     //     creation_datetime    DATETIME2                          NOT NULL
     // );
-    public class TasksModel
+    public class TaskModel
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }
