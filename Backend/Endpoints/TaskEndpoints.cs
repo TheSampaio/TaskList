@@ -74,38 +74,6 @@ namespace Backend.Endpoints
                 return Results.Created($"/api/tasks/{task.Id}", task);
             });
 
-            #region Deprecated Endpoint...
-            // ==================================
-            // ========== [DEPRECATED] ==========
-            // ==================================
-            //
-            // [POST] Create Multiple New Tasks
-            //builder.MapPost("/api/tasks/batch", async (IDbConnection connection, List<TasksModel>? tasks) =>
-            //{
-            //    if (tasks is null)
-            //        return Results.BadRequest("The request body is missing or empty.");
-
-            //    foreach (var task in tasks)
-            //    {
-            //        if (string.IsNullOrWhiteSpace(task.Title) || task.Title.Length > 64)
-            //            return Results.BadRequest("Task title is required and max 64 characters.");
-
-            //        // Generates the GUID and DATETIME in the backend
-            //        task.Id = Guid.NewGuid();
-            //        task.IsDone = false;
-            //        task.CreationDatetime = DateTime.Now;
-            //    }
-
-            //    const string insertQuery = @"
-            //        INSERT INTO tasks(id, title, is_done, creation_datetime)
-            //        VALUES(@Id, @Title, @IsDone, @CreationDatetime);
-            //    ";
-
-            //    await connection.ExecuteAsync(insertQuery, tasks);
-            //    return Results.Created($"/api/tasks", null);
-            //});
-            #endregion
-
             // [PUT] Update Tasks By ID
             builder.MapPut("/api/tasks/{id:Guid}", async (IDbConnection connection, Guid id, TaskModel? task) =>
             {
