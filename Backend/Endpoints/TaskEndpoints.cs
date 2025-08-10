@@ -4,9 +4,9 @@ using System.Data;
 
 namespace Backend.Endpoints
 {
-    public static class TasksEndpoints
+    public static class TaskEndpoints
     {
-        public static IEndpointRouteBuilder MapTasksEndpoints(this IEndpointRouteBuilder builder)
+        public static IEndpointRouteBuilder MapTaskEndpoints(this IEndpointRouteBuilder builder)
         {
             // [GET] Retrieve All Tasks
             builder.MapGet("/api/tasks", async (IDbConnection connection) =>
