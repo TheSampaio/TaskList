@@ -21,7 +21,8 @@ if (app.Environment.IsDevelopment())
 }
 
 // Maps all app's endpoints
-app.MapLoginEndpoints()
+app
+    .MapLoginEndpoints()
     .MapTaskEndpoints();
 
 app.Run();
