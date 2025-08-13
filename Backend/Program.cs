@@ -12,6 +12,17 @@ builder.Services
         return new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection"));
     });
 
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -19,6 +30,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Task List API"));
 }
+
+// Use CORS policy
+app.UseCors("AllowFrontend");
 
 // Maps all app's endpoints
 app.MapTaskEndpoints();
