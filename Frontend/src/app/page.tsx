@@ -1,11 +1,5 @@
-import SidebarTopbarLayout from "@/components/SidebarTopbarLayout";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div>
-      <SidebarTopbarLayout>
-        <h1>[...]</h1>
-      </SidebarTopbarLayout>
-    </div>
-  );
+export default function Index() {
+  redirect("/home");
 }

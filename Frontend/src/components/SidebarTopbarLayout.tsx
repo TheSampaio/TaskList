@@ -12,7 +12,7 @@ export default function SidebarTopbarLayout({
       <Sidebar />
 
       <div className="flex flex-col flex-1">
-        <Topbar />
+        <Topbar text="Task List" />
         <main className="flex-1 p-4 bg-gray-100">{children}</main>
       </div>
     </div>

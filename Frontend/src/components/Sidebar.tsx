@@ -1,9 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import SidebarButton from "./SidebarButton";
 
 import Logo from "../../design/core-logo.jpg";
+import { usePathname, useRouter } from "next/navigation";
 
-export default function SideNavigationBar() {
+export default function Sidebar() {
+  const router = useRouter();
+  const pathName = usePathname();
+
   return (
     <nav className="bg-[#17193a] w-80 h-screen p-1 space-y-1">
       <Image className="w-full rounded-md" src={Logo} alt="Logo" />
@@ -21,6 +27,8 @@ export default function SideNavigationBar() {
           </svg>
         }
         text="Home"
+        onClick={() => router.push("/home")}
+        active={pathName === "/home"}
       />
 
       <SidebarButton
@@ -35,6 +43,8 @@ export default function SideNavigationBar() {
           </svg>
         }
         text="Tasks"
+        onClick={() => router.push("/tasks")}
+        active={pathName === "/tasks"}
       />
     </nav>
   );
