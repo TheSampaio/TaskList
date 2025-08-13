@@ -1,11 +1,11 @@
-import Container from "@/components/Container";
+import SidebarTopbarLayout from "@/components/SidebarTopbarLayout";
 
 export default function Home() {
   return (
     <div>
-      <Container>
+      <SidebarTopbarLayout>
         <h1>[...]</h1>
-      </Container>
+      </SidebarTopbarLayout>
     </div>
   );
 }

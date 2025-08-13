@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SideNavigationButton from "./SideNavigationButton";
+import SidebarButton from "./SidebarButton";
 
 import Logo from "../../design/core-logo.jpg";
 
@@ -8,7 +8,7 @@ export default function SideNavigationBar() {
     <nav className="bg-[#17193a] w-80 h-screen p-1 space-y-1">
       <Image className="w-full rounded-md" src={Logo} alt="Logo" />
 
-      <SideNavigationButton
+      <SidebarButton
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +23,7 @@ export default function SideNavigationBar() {
         text="Home"
       />
 
-      <SideNavigationButton
+      <SidebarButton
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"
