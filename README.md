@@ -1,9 +1,18 @@
 <body>
   <h1>✅ Task List</h1>
-
   <p>
-    A full-stack task management web application with an <strong>ASP.NET Core Minimal API</strong> backend and a <strong>Next.js (React.js)</strong> frontend. It uses <strong>Dapper</strong> for efficient and lightweight SQL-based data access — without relying on a traditional ORM.
+    A <strong>full-stack</strong> task management web application with an
+    <strong>ASP.NET Core Minimal API</strong> backend and a
+    <strong>Next.js (React.js)</strong> frontend. It uses <strong>Dapper</strong> for efficient, lightweight SQL-based data access — without relying on a traditional ORM.
   </p>
+
+  <h2>📸 Screenshots</h2>
+  <strong>• Frontend</strong>
+  <img src=".github/images/thumbnail-frontend.png" alt="Frontend screenshot" />
+
+  <br />
+  <strong>• Backend (Swagger UI)</strong>
+  <img src=".github/images/thumbnail-backend.png" alt="Backend screenshot" />
 
   <h2>📚 Table of Contents</h2>
   <ul>
@@ -18,8 +27,8 @@
   <h2 id="features">✨ Features</h2>
   <ul>
     <li>Create, read, update, and delete tasks (<strong>CRUD</strong> operations)</li>
-    <li>Task model includes: Id (UUID), Title (string), IsDone (bool), CreationDatetime (datetime)</li>
-    <li><strong>ASP.NET Core Minimal API</strong> backend for fast and clean development</li>
+    <li>Task model includes: <code>Id</code> (UUID), <code>Title</code> (string), <code>IsDone</code> (bool), <code>CreationDatetime</code> (datetime)</li>
+    <li><strong>ASP.NET Core Minimal API</strong> backend for fast, clean development</li>
     <li>Data access powered by <strong>Dapper</strong> (no heavy ORM)</li>
     <li>Responsive and modular <strong>Next.js (React.js)</strong> frontend</li>
     <li><strong>Swagger UI</strong> for easy API testing and exploration</li>
@@ -28,7 +37,7 @@
   <h2 id="tech-stack">🧰 Tech Stack</h2>
   <ul>
     <li><strong>Backend:</strong> ASP.NET Core 9 Minimal APIs<br />
-      <em>(.NET 9 is currently in preview — .NET 7 recommended for production)</em>
+      <em>(Note: .NET 9 is currently in preview — .NET 7 recommended for production)</em>
     </li>
     <li><strong>Data Access:</strong> <a href="https://github.com/DapperLib/Dapper" target="_blank" rel="noopener noreferrer">Dapper</a> (lightweight SQL mapper)</li>
     <li><strong>Frontend:</strong> Next.js (React.js)</li>
@@ -38,14 +47,14 @@
 
   <h2 id="getting-started">🚀 Getting Started</h2>
 
-  <h3>🔧 Prerequisites</h3>
+  <h3 id="prerequisites">🔧 Prerequisites</h3>
   <ul>
     <li><a href="https://dotnet.microsoft.com/en-us/download/dotnet/9.0" target="_blank" rel="noopener noreferrer">.NET 9 SDK</a></li>
     <li><a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js and npm</a> (for frontend)</li>
     <li>Microsoft SQL Server (local or cloud-based)</li>
   </ul>
 
-  <h3>🖥️ Backend Setup</h3>
+  <h3 id="backend-setup">🖥️ Backend Setup</h3>
   <ol>
     <li>Clone the repository:
       <pre><code>git clone https://github.com/TheSampaio/TaskList.git
@@ -61,14 +70,23 @@ cd TaskList/Backend</code></pre>
     </li>
   </ol>
 
-  <h3>🌐 Frontend Setup</h3>
-  <p>(Work in progress — frontend update coming soon)</p>
+  <h3 id="frontend-setup">🌐 Frontend Setup <em>(Work In Progress)</em></h3>
+  <ol>
+    <li>Clone the repository:
+      <pre><code>git clone https://github.com/TheSampaio/TaskList.git
+cd TaskList/Frontend</code></pre>
+    </li>
+    <li>Install dependencies and start the development server:
+      <pre><code>npm install
+npm run dev</code></pre>
+    </li>
+    <li>The frontend will be available at:
+      <br /><code>http://localhost:3000</code>
+    </li>
+  </ol>
 
   <h2 id="api-documentation">📖 API Documentation</h2>
-  <p>
-    The backend offers RESTful endpoints with Swagger documentation.
-    After running the backend, visit:
-  </p>
+  <p>After running the backend, Swagger documentation is available at:</p>
   <ul>
     <li><code>http://localhost:5000/swagger/index.html</code></li>
     <li><code>https://localhost:5002/swagger/index.html</code></li>
@@ -138,6 +156,5 @@ cd TaskList/Backend</code></pre>
   </p>
 
   <hr />
-
   <p><em>💡 Contributions, issues, and suggestions are welcome. Let's build together!</em></p>
 </body>
