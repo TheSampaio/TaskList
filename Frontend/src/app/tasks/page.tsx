@@ -72,7 +72,7 @@ export default function Tasks() {
           ))}
         </ul>
 
-        <h2 className="mt-4">Você tem {tasks.length} tarefas</h2>
+        <h2 className="text-[#17193a] mt-8">You have {tasks.length} tasks</h2>
       </div>
     </SidebarTopbarLayout>
   );
