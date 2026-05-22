@@ -1,14 +1,26 @@
+using Backend.Application.Interfaces;
+using Backend.Application.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddOpenApi()
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen()
     .AddControllers();
+
+// Dependency Injection
+builder.Services
+    .AddScoped<ITaskService, TaskService>();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app
+        .UseSwagger()
+        .UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+app.MapControllers();
 app.Run();
