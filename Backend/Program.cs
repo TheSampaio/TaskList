@@ -1,40 +1,26 @@
-using Backend.Endpoints;
-using Microsoft.Data.SqlClient;
-using System.Data;
+using Backend.Application.Interfaces;
+using Backend.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register OpenAPI services and configure the database connection
 builder.Services
-    .AddOpenApi()
-    .AddScoped<IDbConnection>(provider =>
-    {
-        return new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnection"));
-    });
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen()
+    .AddControllers();
 
-// Add CORS policy
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowFrontend", policy =>
-    {
-        policy.WithOrigins("http://localhost:3000")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-    });
-});
+// Dependency Injection
+builder.Services
+    .AddScoped<ITaskService, TaskService>();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Task List API"));
+    app
+        .UseSwagger()
+        .UseSwaggerUI();
 }
 
-// Use CORS policy
-app.UseCors("AllowFrontend");
-
-// Maps all app's endpoints
-app.MapTaskEndpoints();
-
+app.UseHttpsRedirection();
+app.MapControllers();
 app.Run();

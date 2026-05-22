@@ -1,8 +1,9 @@
 # Directories
-.vs
-.vscode
-Backend/bin
-Backend/obj
+.vs/
+.vscode/
+
+bin/
+obj/
 
 # Files
 *.user
