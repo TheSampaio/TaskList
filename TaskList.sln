@@ -2,13 +2,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Presentation", "Backend\Backend.Presentation.csproj", "{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Presentation", "Backend\Presentation\Backend.Presentation.csproj", "{B5CEE1AB-68C5-FCEC-EA61-653FFB609ED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Domain", "Backend.Domain\Backend.Domain.csproj", "{233EE5F3-16B1-441A-9CF1-0BB34FE62F78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Domain", "Backend\Domain\Backend.Domain.csproj", "{233EE5F3-16B1-441A-9CF1-0BB34FE62F78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Infrastructure", "Backend.Infrastructure\Backend.Infrastructure.csproj", "{AE92E806-B06A-46F9-B2D3-F77006F00268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Infrastructure", "Backend\Infrastructure\Backend.Infrastructure.csproj", "{AE92E806-B06A-46F9-B2D3-F77006F00268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Application", "Backend.Application\Backend.Application.csproj", "{4BFF1AF1-93B0-489B-B32B-A177FD9C620F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.Application", "Backend\Application\Backend.Application.csproj", "{4BFF1AF1-93B0-489B-B32B-A177FD9C620F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
