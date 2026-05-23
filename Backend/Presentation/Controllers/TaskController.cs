@@ -16,5 +16,12 @@ namespace Backend.Presentation.Controllers
             var result = taskService.GetAll();
             return Ok(result);
         }
+
+        [HttpGet("{taskId:int}")]
+        public IActionResult GetById(int taskId)
+        {
+            var result = taskService.GetById(taskId);
+            return Ok(result);
+        }
     }
 }
