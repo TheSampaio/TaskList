@@ -10,6 +10,10 @@ namespace Backend.Presentation.Controllers
     )
         : ControllerBase
     {
+        /// <summary>
+        /// Get all tasks.
+        /// </summary>
+        /// <returns>A list of all tasks.</returns>
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -17,6 +21,11 @@ namespace Backend.Presentation.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Get a task by its ID.
+        /// </summary>
+        /// <param name="taskId">The ID of the task.</param>
+        /// <returns>The task with the specified ID.</returns>
         [HttpGet("{taskId:int}")]
         public IActionResult GetById(int taskId)
         {

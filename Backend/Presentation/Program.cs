@@ -8,6 +8,12 @@ builder.Services
     .AddSwaggerGen()
     .AddControllers();
 
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true; 
+});
+
 // Dependency Injection
 builder.Services
     .AddScoped<ITaskService, TaskService>();
