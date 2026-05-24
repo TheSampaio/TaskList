@@ -2,7 +2,8 @@
 {
     public interface ITaskService
     {
-        IEnumerable<string> GetAll();
-        string GetById(int taskId);
+        Task<IEnumerable<Domain.Entities.Task>> GetAllAsync();
+
+        Task<Domain.Entities.Task?> GetByIdAsync(int taskId);
     }
 }
