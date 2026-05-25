@@ -1,5 +1,5 @@
-using Backend.Application.Interfaces;
-using Backend.Application.Services;
+using Backend.Application.Extensions;
+using Backend.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +8,14 @@ builder.Services
     .AddSwaggerGen()
     .AddControllers();
 
-// Dependency Injection
-builder.Services
-    .AddScoped<ITaskService, TaskService>();
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true;
+    options.LowercaseQueryStrings = true;
+});
+
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

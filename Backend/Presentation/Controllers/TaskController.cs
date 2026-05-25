@@ -10,17 +10,30 @@ namespace Backend.Presentation.Controllers
     )
         : ControllerBase
     {
+        /// <summary>
+        /// Get all tasks.
+        /// </summary>
+        /// <returns>A list of all tasks.</returns>
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            var result = taskService.GetAll();
+            var result = await taskService.GetAllAsync();
             return Ok(result);
         }
 
+        /// <summary>
+        /// Get a task by its ID.
+        /// </summary>
+        /// <param name="taskId">The ID of the task.</param>
+        /// <returns>The task with the specified ID.</returns>
         [HttpGet("{taskId:int}")]
-        public IActionResult GetById(int taskId)
+        public async Task<IActionResult> GetByIdAsync(int taskId)
         {
-            var result = taskService.GetById(taskId);
+            var result = await taskService.GetByIdAsync(taskId);
+
+            if (result is null)
+                return NotFound();
+
             return Ok(result);
         }
     }

@@ -1,17 +1,45 @@
 ﻿using Backend.Application.Interfaces;
+using Backend.Domain.Interfaces;
+using Backend.Application.Contracts;
 
 namespace Backend.Application.Services
 {
-    public class TaskService : ITaskService
+    public class TaskService(
+        ITaskRepository taskRepository
+    )
+        : ITaskService
     {
-        public IEnumerable<string> GetAll()
+        public async Task<IEnumerable<TaskResponse>> GetAllAsync()
         {
-            return ["Task 1", "Task 2", "Task 3"];
+            var result = await taskRepository.GetAllAsync();
+
+            return result.Select(task => new TaskResponse
+            (
+                task.Id,
+                task.Title,
+                task.Description,
+                task.IsDone,
+                task.CreatedAt,
+                task.CompletedAt
+            ));
         }
 
-        public string GetById(int taskId)
+        public async Task<TaskResponse?> GetByIdAsync(int taskId)
         {
-            return "Test Task";
+            var task = await taskRepository.GetByIdAsync(taskId);
+
+            if (task is null)
+                return null;
+
+            return new TaskResponse
+            (
+                task.Id,
+                task.Title,
+                task.Description,
+                task.IsDone,
+                task.CreatedAt,
+                task.CompletedAt
+            );
         }
     }
 }
