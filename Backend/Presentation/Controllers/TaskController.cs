@@ -30,6 +30,10 @@ namespace Backend.Presentation.Controllers
         public async Task<IActionResult> GetByIdAsync(int taskId)
         {
             var result = await taskService.GetByIdAsync(taskId);
+
+            if (result is null)
+                return NotFound();
+
             return Ok(result);
         }
     }

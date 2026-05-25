@@ -1,9 +1,11 @@
-﻿namespace Backend.Application.Interfaces
+﻿using Backend.Application.Contracts;
+
+namespace Backend.Application.Interfaces
 {
     public interface ITaskService
     {
-        Task<IEnumerable<Domain.Entities.Task>> GetAllAsync();
+        Task<IEnumerable<TaskResponse>> GetAllAsync();
 
-        Task<Domain.Entities.Task?> GetByIdAsync(int taskId);
+        Task<TaskResponse?> GetByIdAsync(int taskId);
     }
 }
