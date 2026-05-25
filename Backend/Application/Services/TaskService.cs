@@ -1,6 +1,6 @@
-﻿using Backend.Application.Interfaces;
+﻿using Backend.Application.Contracts;
+using Backend.Application.Interfaces;
 using Backend.Domain.Interfaces;
-using Backend.Application.Contracts;
 
 namespace Backend.Application.Services
 {
