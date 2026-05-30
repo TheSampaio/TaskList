@@ -8,7 +8,7 @@ namespace Backend.Application.Extensions
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<ITaskService, TaskService>();
+            services.AddScoped<ITasksService, TasksService>();
             return services;
         }
     }

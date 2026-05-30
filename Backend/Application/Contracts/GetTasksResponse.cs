@@ -1,6 +1,6 @@
 ﻿namespace Backend.Application.Contracts
 {
-    public record TaskResponse(
+    public record GetTasksResponse(
         int Id,
         string Title,
         string? Description,

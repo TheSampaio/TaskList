@@ -5,8 +5,8 @@ namespace Backend.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TaskController(
-        ITaskService taskService
+    public class TasksController(
+        ITasksService taskService
     )
         : ControllerBase
     {
@@ -30,11 +30,7 @@ namespace Backend.Presentation.Controllers
         public async Task<IActionResult> GetByIdAsync(int taskId)
         {
             var result = await taskService.GetByIdAsync(taskId);
-
-            if (result is null)
-                return NotFound();
-
-            return Ok(result);
+            return result is null ? NotFound() : Ok(result);
         }
     }
 }
