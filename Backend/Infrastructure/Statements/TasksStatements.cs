@@ -1,6 +1,6 @@
-﻿namespace Backend.Infrastructure.Queries
+﻿namespace Backend.Infrastructure.Statements
 {
-    internal class TaskQueries
+    internal class TasksStatements
     {
         public const string SelectAll = @"
             SELECT
