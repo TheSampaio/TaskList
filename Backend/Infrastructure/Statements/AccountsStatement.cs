@@ -5,6 +5,8 @@
         public const string SelectAll = @"
             SELECT
                 Id,
+                Name,
+                Surname,
                 Email,
                 IsActive,
                 CreatedAt
@@ -16,6 +18,8 @@
         public const string SelectById = @"
             SELECT
                 Id,
+                Name,
+                Surname,
                 Email,
                 IsActive,
                 CreatedAt

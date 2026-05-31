@@ -1,0 +1,30 @@
+.checkbox {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background-color 0.2s, transform 0.15s;
+  color: #fff;
+  padding: 0;
+}
+
+.checkbox:hover {
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.checked {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.checked:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}

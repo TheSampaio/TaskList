@@ -8,6 +8,8 @@ GO
 
 CREATE TABLE Accounts (
     [Id]            INT IDENTITY(1,1)   NOT NULL,
+    [Name]          VARCHAR(32)         NOT NULL,
+    [Surname]       VARCHAR(32)         NOT NULL,
     [Email]         VARCHAR(256)        NOT NULL,
     [PasswordHash]  VARCHAR(512)        NOT NULL,
     [IsActive]      BIT                 NOT NULL    DEFAULT 1,

@@ -15,6 +15,8 @@ namespace Backend.Application.Services
             return result.Select(account => new GetAccountsResponse
             (
                 account.Id,
+                account.Name,
+                account.Surname,
                 account.Email,
                 account.CreatedAt
             ));
@@ -28,6 +30,8 @@ namespace Backend.Application.Services
                 : new GetAccountsResponse
                 (
                     result.Id,
+                    result.Name,
+                    result.Surname,
                     result.Email,
                     result.CreatedAt
                 );
