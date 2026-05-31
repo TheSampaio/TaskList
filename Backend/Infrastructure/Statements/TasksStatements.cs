@@ -4,7 +4,7 @@
     {
         public const string SelectAll = @"
             SELECT
-                TaskId AS Id,
+                Id,
                 Title,
                 Description,
                 IsDone,
@@ -18,7 +18,7 @@
 
         public const string SelectById = @"
             SELECT
-                TaskId AS Id,
+                Id,
                 Title,
                 Description,
                 IsDone,
@@ -28,7 +28,7 @@
             FROM
                 Tasks
             WHERE
-                TaskId = @Id
+                Id = @Id
                 AND IsActive = 1;";
     }
 }
