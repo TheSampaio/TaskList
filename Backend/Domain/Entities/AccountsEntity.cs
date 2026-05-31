@@ -9,6 +9,14 @@ namespace Backend.Domain.Entities
         [Key]
         public int Id { get; set; }
 
+        [MaxLength(32)]
+        [Required(AllowEmptyStrings = false)]
+        public string Name { get; set; } = string.Empty;
+
+        [MaxLength(32)]
+        [Required(AllowEmptyStrings = false)]
+        public string Surname { get; set; } = string.Empty;
+
         [MaxLength(256)]
         [Required(AllowEmptyStrings = false)]
         public string Email { get; set; } = string.Empty;
