@@ -1,15 +1,23 @@
-type CheckboxProps = {
-  value?: boolean;
-  onClick?: () => void;
-};
+import { CheckIcon } from '../icons';
+import styles from './Checkbox.module.css';
 
-export default function Checkbox({ value, onClick }: CheckboxProps) {
+interface CheckboxProps {
+  checked: boolean;
+  onChange: () => void;
+  label?: string;
+}
+
+export function Checkbox({ checked, onChange, label }: CheckboxProps) {
   return (
-    <div
-      className={`inline-block align-middle size-4 border rounded-full cursor-pointer ${
-        value ? "bg-[#2d4070]" : "bg-white"
-      }`}
-      onClick={onClick}
-    />
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={checked}
+      aria-label={label ?? 'Toggle task'}
+      onClick={onChange}
+      className={`${styles.checkbox} ${checked ? styles.checked : ''}`}
+    >
+      {checked && <CheckIcon size={12} />}
+    </button>
   );
 }
