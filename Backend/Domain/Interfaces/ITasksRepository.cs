@@ -1,8 +1,10 @@
-﻿namespace Backend.Domain.Interfaces
+﻿using Backend.Domain.Entities;
+
+namespace Backend.Domain.Interfaces
 {
     public interface ITasksRepository
     {
-        Task<IEnumerable<Entities.TasksEntity>> GetAllAsync();
-        Task<Entities.TasksEntity?> GetByIdAsync(int id);
+        Task<IEnumerable<TasksEntity>> GetAllAsync();
+        Task<TasksEntity?> GetByIdAsync(int id);
     }
 }

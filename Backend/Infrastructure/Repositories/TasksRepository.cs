@@ -1,22 +1,23 @@
 ﻿using Backend.Domain.Interfaces;
+using Backend.Domain.Entities;
 using Backend.Infrastructure.Statements;
-using System.Data;
 using Dapper;
+using System.Data;
 
 namespace Backend.Infrastructure.Repositories
 {
     public class TasksRepository(IDbConnection dbConnection) : ITasksRepository
     {
-        public async Task<IEnumerable<Domain.Entities.TasksEntity>> GetAllAsync()
+        public async Task<IEnumerable<TasksEntity>> GetAllAsync()
         {
-            var result = await dbConnection.QueryAsync<Domain.Entities.TasksEntity>(TasksStatements.SelectAll);
+            var result = await dbConnection.QueryAsync<TasksEntity>(TasksStatements.SelectAll);
             return result;
         }
 
-        public async Task<Domain.Entities.TasksEntity?> GetByIdAsync(int id)
+        public async Task<TasksEntity?> GetByIdAsync(int id)
         {
             var parameters = new { Id = id };
-            var result = await dbConnection.QueryFirstOrDefaultAsync<Domain.Entities.TasksEntity?>(
+            var result = await dbConnection.QueryFirstOrDefaultAsync<TasksEntity?>(
                 TasksStatements.SelectById,
                 parameters
             );
