@@ -4,8 +4,7 @@ namespace Backend.Application.Interfaces
 {
     public interface ITasksService
     {
-        Task<IEnumerable<GetTasksResponse>> GetAllAsync();
-
-        Task<GetTasksResponse?> GetByIdAsync(int taskId);
+        public Task<IEnumerable<GetTasksResponse>> GetAllAsync();
+        public Task<GetTasksResponse?> GetByIdAsync(int taskId);
     }
 }

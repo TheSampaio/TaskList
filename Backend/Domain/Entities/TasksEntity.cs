@@ -9,6 +9,8 @@ namespace Backend.Domain.Entities
         [Key]
         public int Id { get; set; }
 
+        public int AccountId { get; set; }
+
         [Required(AllowEmptyStrings = false)]
         [MaxLength(128)]
         public string Title { get; set; } = string.Empty;

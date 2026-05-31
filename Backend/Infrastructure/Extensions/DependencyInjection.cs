@@ -15,6 +15,7 @@ namespace Backend.Infrastructure.Extensions
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             services.AddScoped<IDbConnection>(_ => new SqlConnection(connectionString));
+            services.AddScoped<IAccountsRepository, AccountsRepository>();
             services.AddScoped<ITasksRepository, TasksRepository>();
 
             return services;

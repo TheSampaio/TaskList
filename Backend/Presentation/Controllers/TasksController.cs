@@ -25,12 +25,14 @@ namespace Backend.Presentation.Controllers
         /// Get a task by its ID.
         /// </summary>
         /// <param name="taskId">The ID of the task.</param>
-        /// <returns>The task with the specified ID.</returns>
+        /// <returns>The task with the specified ID, or a 404 Not Found if the task does not exist.</returns>
         [HttpGet("{taskId:int}")]
         public async Task<IActionResult> GetByIdAsync(int taskId)
         {
             var result = await taskService.GetByIdAsync(taskId);
-            return result is null ? NotFound() : Ok(result);
+            return result is null
+                ? NotFound()
+                : Ok(result);
         }
     }
 }

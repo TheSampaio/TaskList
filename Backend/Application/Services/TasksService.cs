@@ -12,7 +12,6 @@ namespace Backend.Application.Services
         public async Task<IEnumerable<GetTasksResponse>> GetAllAsync()
         {
             var result = await taskRepository.GetAllAsync();
-
             return result.Select(task => new GetTasksResponse
             (
                 task.Id,
@@ -27,7 +26,6 @@ namespace Backend.Application.Services
         public async Task<GetTasksResponse?> GetByIdAsync(int taskId)
         {
             var task = await taskRepository.GetByIdAsync(taskId);
-
             return task is null 
                 ? null
                 : new GetTasksResponse

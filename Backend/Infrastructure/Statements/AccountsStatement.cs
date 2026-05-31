@@ -1,32 +1,26 @@
 ﻿namespace Backend.Infrastructure.Statements
 {
-    internal class TasksStatements
+    internal class AccountsStatement
     {
         public const string SelectAll = @"
             SELECT
                 Id,
-                Title,
-                Description,
-                IsDone,
+                Email,
                 IsActive,
-                CreatedAt,
-                CompletedAt
+                CreatedAt
             FROM
-                Tasks
+                Accounts
             WHERE
                 IsActive = 1;";
 
         public const string SelectById = @"
             SELECT
                 Id,
-                Title,
-                Description,
-                IsDone,
+                Email,
                 IsActive,
-                CreatedAt,
-                CompletedAt
+                CreatedAt
             FROM
-                Tasks
+                Accounts
             WHERE
                 Id = @Id
                 AND IsActive = 1;";
